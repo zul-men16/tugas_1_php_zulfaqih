@@ -1,0 +1,271 @@
+/* ================================================
+   style.css — Desain Halaman Cek Kelulusan Ujian
+   Pemrograman PHP | Universitas Trisakti
+   ================================================ */
+
+/* Import font modern dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ---- Reset & Base ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4ff;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+}
+
+/* ---- Header Halaman ---- */
+.page-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1d4ed8;
+}
+
+.page-header p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-top: 6px;
+}
+
+/* ---- Card Utama ---- */
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.10);
+    padding: 36px 40px;
+    width: 100%;
+    max-width: 480px;
+}
+
+/* ---- Judul di dalam Card ---- */
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1d4ed8;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e0e7ff;
+}
+
+/* ---- Grup Input Form ---- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    background-color: #ffffff;
+}
+
+/* Input yang gagal validasi */
+.form-group input.input-error {
+    border-color: #ef4444;
+    background-color: #fff5f5;
+}
+
+/* ---- Pesan Error Validasi ---- */
+.error-msg {
+    display: block;
+    font-size: 0.8rem;
+    color: #dc2626;
+    margin-top: 5px;
+}
+
+/* ---- Alert Error Global ---- */
+.alert-error {
+    background-color: #fef2f2;
+    border: 1.5px solid #fca5a5;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-size: 0.875rem;
+    color: #b91c1c;
+}
+
+.alert-error strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* ---- Tombol Submit ---- */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 4px;
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* ---- Kotak Hasil ---- */
+.result-box {
+    margin-top: 28px;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1.5px solid;
+}
+
+/* Warna kotak hasil berdasarkan status */
+.result-box.lulus {
+    background-color: #f0fdf4;
+    border-color: #86efac;
+}
+
+.result-box.remedial {
+    background-color: #fff5f5;
+    border-color: #fca5a5;
+}
+
+.result-box.batas {
+    background-color: #fff7ed;
+    border-color: #fdba74;
+}
+
+.result-box h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #374151;
+}
+
+/* ---- Baris Detail Hasil ---- */
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.result-row:last-child {
+    border-bottom: none;
+}
+
+.result-row .label {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.result-row .value {
+    color: #1e293b;
+    font-weight: 600;
+    text-align: right;
+}
+
+/* ---- Badge Status ---- */
+.badge-status {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.badge-lulus {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.badge-remedial {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.badge-batas {
+    background-color: #ffedd5;
+    color: #c2410c;
+}
+
+/* ---- Tombol Coba Lagi ---- */
+.btn-reset {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 9px 20px;
+    background-color: #eff6ff;
+    color: #2563eb;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-reset:hover {
+    background-color: #dbeafe;
+}
+
+/* ---- Footer ---- */
+.page-footer {
+    margin-top: 28px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* ---- Responsif Mobile ---- */
+@media (max-width: 520px) {
+    .card {
+        padding: 28px 22px;
+    }
+
+    .page-header h1 {
+        font-size: 1.4rem;
+    }
+}
